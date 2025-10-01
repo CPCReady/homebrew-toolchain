@@ -4,13 +4,39 @@ on:
   push:
     tags:
       - 'v*'
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   bottle:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: Homebrew/actions/setup-homebrew@main
-      - run: brew install gcc make
-      - run: brew tap cpcready/toolchain
-      - run: brew test-bot --tap=cpcready/toolchain --publish
+      # 1️⃣ Checkout del código
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Setup Homebrew
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      # 3️⃣ Instalar dependencias necesarias
+      - name: Install dependencies
+        run: |
+          brew install gcc make shfmt
+
+      # 4️⃣ Formatear automáticamente scripts Bash
+      - name: Fix Bash style
+        run: |
+          find . -type f -name "*.sh" -exec shfmt -w {} +
+
+      # 5️⃣ Tap correcto del repositorio
+      - name: Tap toolchain
+        run: brew tap cpcready/toolchain
+
+      # 6️⃣ Ejecutar test-bot y publicar botellas
+      - name: Run test-bot
+        run: |
+          brew test-bot --tap=cpcready/toolchain --publish
