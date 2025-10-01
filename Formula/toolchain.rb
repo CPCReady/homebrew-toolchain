@@ -1,8 +1,8 @@
 class Toolchain < Formula
   desc "CPCReady toolchain with C/C++ utilities"
   homepage "https://github.com/CPCReady/toolchain"
-  url "https://github.com/CPCReady/toolchain/releases/download/v0.0.4/cpcready-toolchain-v0.0.4.tar.gz"
-  sha256 "6a1494de45a9729842cd7a310961387dbeac317d04ec5bc8a0b65d3e9a451172"
+  url "https://github.com/CPCReady/toolchain/releases/download/v0.0.5/cpcready-toolchain-v0.0.5.tar.gz"
+  sha256 "398310940f55d4aa6e92c28b1238e3f46a57b92a0e85bc56dea62cf623d54a50"
   license "MIT"
 
   depends_on "gcc" => :build
