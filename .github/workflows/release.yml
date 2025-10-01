@@ -12,4 +12,5 @@ jobs:
       - uses: actions/checkout@v3
       - uses: Homebrew/actions/setup-homebrew@main
       - run: brew install gcc make
-      - run: brew test-bot --tap=Formula/toolchain.rb --publish
+      - run: brew tap cpcready/toolchain
+      - run: brew test-bot --tap=cpcready/toolchain --publish
