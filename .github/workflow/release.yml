@@ -1,0 +1,15 @@
+name: Build bottles
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  bottle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Homebrew/actions/setup-homebrew@v2
+      - run: brew install gcc make
+      - run: brew test-bot --ci-upload Formula/toolchain.rb
