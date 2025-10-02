@@ -32,7 +32,7 @@ class Toolchain < Formula
       bin.install "cpc-ini"
     end
 
-    cd "tools/idsk/src" do
+    cd "tools/idsk" do
       system "g++", "-std=c++11", "-O2", "-Wall",
             "src/Basic.cpp", "src/BitmapCPC.cpp", "src/Dams.cpp",
             "src/Desass.cpp", "src/endianPPC.cpp", "src/GestDsk.cpp",
