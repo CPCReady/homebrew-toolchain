@@ -11,6 +11,7 @@ class Toolchain < Formula
 
   depends_on "gcc" => :build
   depends_on "make" => :build
+  depends_on "inih"
 
   def install
     ENV.append_path "PATH", Formula["gcc"].opt_bin
@@ -19,6 +20,16 @@ class Toolchain < Formula
     cd "tools/cpc-config" do
       system Formula["gcc"].opt_bin/"gcc-15", "cpc-config.c", "-o", "cpc-config"
       bin.install "cpc-config"
+    end
+
+    cd "tools/cpc-ini" do
+      system Formula["gcc"].opt_bin/"gcc-15",
+            "-I#{Formula["inih"].opt_include}",
+            "-L#{Formula["inih"].opt_lib}",
+            "main.c",
+            "-o", "cpc-ini",
+            "-linih"
+      bin.install "cpc-ini"
     end
   end
 
