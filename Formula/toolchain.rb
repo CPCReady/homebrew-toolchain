@@ -43,17 +43,17 @@ class Toolchain < Formula
 
       system Formula["gcc"].opt_bin/"g++-15",
             "-std=c++11", "-O2", "-Wall",
-            "src/Basic.cpp",
-            "src/BitmapCPC.cpp",
-            "src/Dams.cpp",
-            "src/Desass.cpp",
-            "src/endianPPC.cpp",
-            "src/GestDsk.cpp",
-            "src/getopt_pp.cpp",
-            "src/Main.cpp",
-            "src/Outils.cpp",
-            "src/ViewFile.cpp",
-            "src/Ascii.cpp",
+            "./src/Basic.cpp",
+            "./src/BitmapCPC.cpp",
+            "./src/Dams.cpp",
+            "./src/Desass.cpp",
+            "./src/endianPPC.cpp",
+            "./src/GestDsk.cpp",
+            "./src/getopt_pp.cpp",
+            "./src/Main.cpp",
+            "./src/Outils.cpp",
+            "./src/ViewFile.cpp",
+            "./src/Ascii.cpp",
             "-o", build_dir/"iDSK"
 
       bin.install build_dir/"iDSK"
