@@ -3,7 +3,7 @@ class Toolchain < Formula
   homepage "https://github.com/CPCReady/toolchain"
   url "https://github.com/CPCReady/toolchain.git",
       tag:      "v0.0.5",
-      revision: "3c2f7b8d8d5a4e2f1a2b3c4d5e6f7g8h9i0jklmn" # reemplaza con el SHA real del tag
+      revision: "c6fc379956863c417ba599b3255222baf29c9fb6" # reemplaza con el SHA real del tag
   license "MIT"
 
   depends_on "gcc" => :build
