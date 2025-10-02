@@ -39,8 +39,12 @@ jobs:
       # 5️⃣ Test de la fórmula
       - name: Test formula
         run: |
-          # Hacer tap del directorio actual (.)
-          brew tap cpcready/toolchain .
+          # Remover tap si existe
+          brew untap cpcready/toolchain 2>/dev/null || true
+          # Crear directorio para el tap
+          mkdir -p "$(brew --repository)/Library/Taps/cpcready"
+          # Crear link simbólico al repositorio actual
+          ln -s "$PWD" "$(brew --repository)/Library/Taps/cpcready/homebrew-toolchain"
           # Instalar y probar
           brew install --build-from-source --verbose toolchain
           brew test toolchain
