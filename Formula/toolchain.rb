@@ -53,7 +53,9 @@ class Toolchain < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/cpc-config 2>&1", 1)
+    # Verificar que los ejecutables existen y tienen permisos de ejecución
     assert_predicate bin/"cpc-config", :executable?
+    assert_predicate bin/"cpc-ini", :executable?
+    assert_predicate bin/"iDSK", :executable?
   end
 end

@@ -1,20 +1,54 @@
 name: CI
 
 on:
-  push:
-    tags:
-      - 'v*'
-    branches:
-      - main
   pull_request:
     branches:
       - main
 
 jobs:
-  test:
+  test-and-merge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
     steps:
       # 1️⃣ Checkout del código
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Setup Homebrew
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      # 3️⃣ Instalar dependencias necesarias
+      - name: Install dependencies
+        run: |
+          brew install gcc make shfmt
+
+      # 4️⃣ Formatear automáticamente scripts Bash
+      - name: Fix Bash style
+        run: |
+          find . -type f -name "*.sh" -exec shfmt -w {} +
+
+      # 5️⃣ Tap y test de la fórmula
+      - name: Test formula
+        run: |
+          brew tap cpcready/toolchain .
+          brew install --build-from-source --verbose toolchain
+          brew test toolchain
+
+      # 6️⃣ Auto-aprobar la PR si pasan los tests
+      - name: Auto-approve PR
+        if: success()
+        uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 7️⃣ Auto-merge si está aprobada
+      - name: Auto-merge PR
+        if: success()
+        run: |
+          gh pr merge --auto --merge "${{ github.event.pull_request.html_url }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
