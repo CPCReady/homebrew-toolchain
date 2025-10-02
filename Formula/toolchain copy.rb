@@ -1,9 +1,8 @@
 class Toolchain < Formula
   desc "C/C++ utilities for CPC development"
   homepage "https://github.com/CPCReady/toolchain"
-  url "https://github.com/CPCReady/toolchain.git",
-      tag:      "v0.0.7",
-      revision: "baf205e943845cc5336a6c6556e1aebc22b6ab4e" # reemplaza con el SHA real del tag
+  url "https://github.com/CPCReady/toolchain/releases/download/v0.0.7/cpcready-toolchain-v0.0.7.tar.gz"
+  sha256 "58a9b32cda26383d2ecd95f695bee679a40d6f199a63df9fa7cdb4c61a3d55ce"
   license "MIT"
 
   depends_on "gcc" => :build
@@ -44,17 +43,17 @@ class Toolchain < Formula
 
       system Formula["gcc"].opt_bin/"g++-15",
             "-std=c++11", "-O2", "-Wall",
-            "src/Basic.cpp",
-            "src/BitmapCPC.cpp",
-            "src/Dams.cpp",
-            "src/Desass.cpp",
-            "src/endianPPC.cpp",
-            "src/GestDsk.cpp",
-            "src/getopt_pp.cpp",
-            "src/Main.cpp",
-            "src/Outils.cpp",
-            "src/ViewFile.cpp",
-            "src/Ascii.cpp",
+            "./src/Basic.cpp",
+            "./src/BitmapCPC.cpp",
+            "./src/Dams.cpp",
+            "./src/Desass.cpp",
+            "./src/endianPPC.cpp",
+            "./src/GestDsk.cpp",
+            "./src/getopt_pp.cpp",
+            "./src/Main.cpp",
+            "./src/Outils.cpp",
+            "./src/ViewFile.cpp",
+            "./src/Ascii.cpp",
             "-o", build_dir/"iDSK"
 
       bin.install build_dir/"iDSK"
