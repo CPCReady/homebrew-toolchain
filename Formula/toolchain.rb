@@ -38,23 +38,27 @@ class Toolchain < Formula
     # ------------------------
     # iDSK
     # ------------------------
-    idsk_dir = buildpath/"tools/idsk"
-    build_dir = idsk_dir/"build"
-    build_dir.mkpath
+    cd "tools/idsk" do
+      build_dir = Pathname.pwd/"build"
+      build_dir.mkpath
 
-    # obtenemos todos los .cpp del repo
-    cpp_files = Dir[idsk_dir/"src/*.cpp"]
-    if cpp_files.empty?
-      odie "No .cpp files found in #{idsk_dir}/src. Make sure the repo contains the iDSK sources."
+      system Formula["gcc"].opt_bin/"g++-15",
+            "-std=c++11", "-O2", "-Wall",
+            "src/Basic.cpp",
+            "src/BitmapCPC.cpp",
+            "src/Dams.cpp",
+            "src/Desass.cpp",
+            "src/endianPPC.cpp",
+            "src/GestDsk.cpp",
+            "src/getopt_pp.cpp",
+            "src/Main.cpp",
+            "src/Outils.cpp",
+            "src/ViewFile.cpp",
+            "src/Ascii.cpp",
+            "-o", build_dir/"iDSK"
+
+      bin.install build_dir/"iDSK"
     end
-
-    # compilamos con GCC-15
-    system Formula["gcc"].opt_bin/"g++-15",
-           "-std=c++11", "-O2", "-Wall",
-           *cpp_files,
-           "-o", build_dir/"iDSK"
-
-    bin.install build_dir/"iDSK"
   end
 
   test do
