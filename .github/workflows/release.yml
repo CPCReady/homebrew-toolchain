@@ -1,4 +1,4 @@
-name: Build bottles
+name: CI
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - main
 
 jobs:
-  bottle:
+  test:
     runs-on: ubuntu-latest
     steps:
       # 1️⃣ Checkout del código
@@ -32,11 +32,9 @@ jobs:
         run: |
           find . -type f -name "*.sh" -exec shfmt -w {} +
 
-      # 5️⃣ Tap correcto del repositorio
-      - name: Tap toolchain
-        run: brew tap cpcready/toolchain
-
-      # 6️⃣ Ejecutar test-bot y publicar botellas
-      - name: Run test-bot
+      # 5️⃣ Tap y test de la fórmula
+      - name: Test formula
         run: |
-          brew test-bot --tap=cpcready/toolchain --publish
+          brew tap cpcready/toolchain .
+          brew install --build-from-source --verbose toolchain
+          brew test toolchain
