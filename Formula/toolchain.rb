@@ -32,12 +32,14 @@ class Toolchain < Formula
       bin.install "cpc-ini"
     end
 
-    cd "tools/idsk" do
-      mkdir "build" do
-        system "cmake", "..", *std_cmake_args
-        system "cmake", "--build", "."
-        bin.install "iDSK"  # ojo: aquí ya no hace falta "build/" porque ya estás en build/
-      end
+    cd "tools/idsk/src" do
+      system "g++", "-std=c++11", "-O2", "-Wall",
+            "src/Basic.cpp", "src/BitmapCPC.cpp", "src/Dams.cpp",
+            "src/Desass.cpp", "src/endianPPC.cpp", "src/GestDsk.cpp",
+            "src/getopt_pp.cpp", "src/Main.cpp", "src/Outils.cpp",
+            "src/ViewFile.cpp", "src/Ascii.cpp",
+            "-o", "iDSK"
+      bin.install "iDSK"
     end
 
 
