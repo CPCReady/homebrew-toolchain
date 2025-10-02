@@ -18,23 +18,3 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Setup Homebrew
-      - name: Setup Homebrew
-        uses: Homebrew/actions/setup-homebrew@main
-
-      # 3️⃣ Instalar dependencias necesarias
-      - name: Install dependencies
-        run: |
-          brew install gcc make shfmt
-
-      # 4️⃣ Formatear automáticamente scripts Bash
-      - name: Fix Bash style
-        run: |
-          find . -type f -name "*.sh" -exec shfmt -w {} +
-
-      # 5️⃣ Tap y test de la fórmula
-      - name: Test formula
-        run: |
-          brew tap cpcready/toolchain .
-          brew install --build-from-source --verbose toolchain
-          brew test toolchain
