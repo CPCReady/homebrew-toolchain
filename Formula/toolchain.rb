@@ -36,7 +36,7 @@ class Toolchain < Formula
       mkdir "build" do
         system "cmake", "..", *std_cmake_args
         system "cmake", "--build", "."
-        bin.install "build/iDSK"
+        bin.install "iDSK"  # ojo: aquí ya no hace falta "build/" porque ya estás en build/
       end
     end
 
