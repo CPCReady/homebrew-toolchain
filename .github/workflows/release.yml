@@ -4,6 +4,11 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
 
 jobs:
   test-and-merge:
@@ -52,3 +57,34 @@ jobs:
           gh pr merge --auto --merge "${{ github.event.pull_request.html_url }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  create-release:
+    needs: test-and-merge
+    if: github.event_name == 'push' && contains(github.ref, 'refs/heads/main')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get version from formula
+        id: get_version
+        run: |
+          VERSION=$(grep -m1 'url ".*v[0-9]*\.[0-9]*\.[0-9]*\.tar\.gz"' Formula/toolchain.rb | grep -o 'v[0-9]*\.[0-9]*\.[0-9]*')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        if: steps.get_version.outputs.version != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          gh release create $VERSION \
+            --title "Release $VERSION" \
+            --notes "Release $VERSION of the CPC Development Toolchain" \
+            --draft=false \
+            --latest
