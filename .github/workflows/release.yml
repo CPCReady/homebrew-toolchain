@@ -39,6 +39,10 @@ jobs:
       # 5️⃣ Test de la fórmula
       - name: Test formula
         run: |
+          # Hacer tap del directorio actual (.)
+          brew tap cpcready/toolchain .
+          # Instalar y probar
+          brew install --build-from-source --verbose toolchain
           brew test toolchain
 
       # 6️⃣ Auto-aprobar la PR si pasan los tests
