@@ -2,8 +2,8 @@ class Toolchain < Formula
   desc "C/C++ utilities for CPC development"
   homepage "https://github.com/CPCReady/toolchain"
   url "https://github.com/CPCReady/toolchain.git",
-      tag:      "v0.0.5",
-      revision: "c6fc379956863c417ba599b3255222baf29c9fb6" # reemplaza con el SHA real del tag
+      tag:      "v0.0.6",
+      revision: "0d4bf96a6be8e83ef0ea98231624907bcf1ac6df" # reemplaza con el SHA real del tag
   license "MIT"
 
   depends_on "gcc" => :build
