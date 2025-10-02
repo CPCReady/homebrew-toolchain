@@ -33,24 +33,22 @@ class Toolchain < Formula
     end
 
     cd "tools/idsk" do
-      mkdir "build" do
         # compilamos todos los .cpp con rutas relativas correctas
         system "g++", "-std=c++11", "-O2", "-Wall",
-              "../src/Basic.cpp",
-              "../src/BitmapCPC.cpp",
-              "../src/Dams.cpp",
-              "../src/Desass.cpp",
-              "../src/endianPPC.cpp",
-              "../src/GestDsk.cpp",
-              "../src/getopt_pp.cpp",
-              "../src/Main.cpp",
-              "../src/Outils.cpp",
-              "../src/ViewFile.cpp",
-              "../src/Ascii.cpp",
+              "./src/Basic.cpp",
+              "./src/BitmapCPC.cpp",
+              "./src/Dams.cpp",
+              "./src/Desass.cpp",
+              "./src/endianPPC.cpp",
+              "./src/GestDsk.cpp",
+              "./src/getopt_pp.cpp",
+              "./src/Main.cpp",
+              "./src/Outils.cpp",
+              "./src/ViewFile.cpp",
+              "./src/Ascii.cpp",
               "-o", "iDSK"
         # instalamos el binario
         bin.install "iDSK"
-      end
     end
 
 
