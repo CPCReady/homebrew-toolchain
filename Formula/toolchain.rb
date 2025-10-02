@@ -1,13 +1,10 @@
 class Toolchain < Formula
   desc "C/C++ utilities for CPC development"
   homepage "https://github.com/CPCReady/toolchain"
-  url "https://github.com/CPCReady/toolchain/releases/download/v0.0.5/cpcready-toolchain-v0.0.5.tar.gz"
-  sha256 "398310940f55d4aa6e92c28b1238e3f46a57b92a0e85bc56dea62cf623d54a50"
+  url "https://github.com/CPCReady/toolchain.git",
+      tag:      "v0.0.5",
+      revision: "c6fc379956863c417ba599b3255222baf29c9fb6"  # reemplaza con el hash del commit del tag
   license "MIT"
-
-  def pour_bottle?
-    false
-  end
 
   depends_on "gcc" => :build
   depends_on "make" => :build
@@ -17,39 +14,36 @@ class Toolchain < Formula
     ENV.append_path "PATH", Formula["gcc"].opt_bin
     ENV["CC"] = Formula["gcc"].opt_bin/"gcc-15"
 
+    # cpc-config
     cd "tools/cpc-config" do
       system Formula["gcc"].opt_bin/"gcc-15", "cpc-config.c", "-o", "cpc-config"
       bin.install "cpc-config"
     end
 
+    # cpc-ini
     cd "tools/cpc-ini" do
       system Formula["gcc"].opt_bin/"gcc-15",
-            "-I#{Formula["inih"].opt_include}",
-            "-L#{Formula["inih"].opt_lib}",
-            "main.c",
-            "-o", "cpc-ini",
-            "-linih"
+             "-I#{Formula["inih"].opt_include}",
+             "-L#{Formula["inih"].opt_lib}",
+             "main.c",
+             "-o", "cpc-ini",
+             "-linih"
       bin.install "cpc-ini"
     end
 
-    cd "tools/idsk" do
-      build_dir = Pathname.pwd/"build"
-      build_dir.mkpath
+    # iDSK
+    idsk_dir = buildpath/"tools/idsk"
+    build_dir = idsk_dir/"build"
+    build_dir.mkpath
 
-      cpp_files = %w[
-        Basic.cpp BitmapCPC.cpp Dams.cpp Desass.cpp endianPPC.cpp
-        GestDsk.cpp getopt_pp.cpp Main.cpp Outils.cpp ViewFile.cpp Ascii.cpp
-      ].map { |f| Pathname.pwd/"src"/f }
+    cpp_files = Dir[idsk_dir/"src/*.cpp"]
 
-      system Formula["gcc"].opt_bin/"g++-15",
-            "-std=c++11", "-O2", "-Wall",
-            *cpp_files,
-            "-o", build_dir/"iDSK"
+    system Formula["gcc"].opt_bin/"g++-15",
+           "-std=c++11", "-O2", "-Wall",
+           *cpp_files,
+           "-o", build_dir/"iDSK"
 
-      bin.install build_dir/"iDSK"
-    end
-
-
+    bin.install build_dir/"iDSK"
   end
 
   test do
