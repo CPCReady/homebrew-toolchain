@@ -39,7 +39,6 @@ jobs:
       # 5️⃣ Test de la fórmula
       - name: Test formula
         run: |
-          brew install --build-from-source --verbose Formula/toolchain.rb
           brew test toolchain
 
       # 6️⃣ Auto-aprobar la PR si pasan los tests
