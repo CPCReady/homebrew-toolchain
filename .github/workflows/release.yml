@@ -39,7 +39,13 @@ jobs:
       # 5️⃣ Tap y test de la fórmula
       - name: Test formula
         run: |
-          brew tap cpcready/toolchain .
+          # Primero eliminamos el tap si existe
+          brew untap cpcready/toolchain 2>/dev/null || true
+          # Hacemos tap del repositorio local
+          brew tap-new cpcready/toolchain
+          # Copiamos los archivos de la fórmula
+          cp -r Formula/* "$(brew --repository cpcready/toolchain)/Formula/"
+          # Instalamos y testeamos
           brew install --build-from-source --verbose toolchain
           brew test toolchain
 
