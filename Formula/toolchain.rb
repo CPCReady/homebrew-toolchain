@@ -11,7 +11,6 @@ class Toolchain < Formula
 
   depends_on "gcc" => :build
   depends_on "make" => :build
-  depends_on "cmake" => :build
   depends_on "inih"
 
   def install
@@ -34,13 +33,11 @@ class Toolchain < Formula
     end
 
     cd "tools/idsk" do
-      mkdir_p "build"
-      cd "build" do
-        system "cmake", "..", *std_cmake_args, 
-              "-DCMAKE_C_COMPILER=#{Formula["gcc"].opt_bin}/gcc-15"
+      mkdir "build" do
+        system "cmake", "..", *std_cmake_args
         system "cmake", "--build", "."
+        bin.install "build/idsk"
       end
-      bin.install "build/idsk"
     end
 
 
