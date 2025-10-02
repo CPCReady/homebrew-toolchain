@@ -36,17 +36,10 @@ jobs:
         run: |
           find . -type f -name "*.sh" -exec shfmt -w {} +
 
-      # 5️⃣ Tap y test de la fórmula
+      # 5️⃣ Test de la fórmula
       - name: Test formula
         run: |
-          # Primero eliminamos el tap si existe
-          brew untap cpcready/toolchain 2>/dev/null || true
-          # Hacemos tap del repositorio local
-          brew tap-new cpcready/toolchain
-          # Copiamos los archivos de la fórmula
-          cp -r Formula/* "$(brew --repository cpcready/toolchain)/Formula/"
-          # Instalamos y testeamos
-          brew install --build-from-source --verbose toolchain
+          brew install --build-from-source --verbose Formula/toolchain.rb
           brew test toolchain
 
       # 6️⃣ Auto-aprobar la PR si pasan los tests
