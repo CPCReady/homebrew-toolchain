@@ -79,9 +79,10 @@ jobs:
 
       - name: Get version from formula
         id: get_version
+        shell: bash
         run: |
           VERSION=$(grep -m1 'url ".*v[0-9]*\.[0-9]*\.[0-9]*\.tar\.gz"' Formula/toolchain.rb | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "::set-output name=version::$VERSION"
 
       - name: Create Release
         if: steps.get_version.outputs.version != ''
