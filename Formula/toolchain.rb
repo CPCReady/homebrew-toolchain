@@ -15,6 +15,9 @@ class Toolchain < Formula
   depends_on "inih"
 
   def install
+    # Limpiar directorios de build anteriores
+    rm_rf Dir["**/build"]
+    
     ENV.append_path "PATH", Formula["gcc"].opt_bin
     ENV["CC"] = Formula["gcc"].opt_bin/"gcc-15"
 
@@ -34,6 +37,8 @@ class Toolchain < Formula
     end
 
     cd "tools/idsk" do
+      # Limpiamos completamente el directorio build si existe
+      rm_rf "build"
       mkdir_p "build"
       cd "build" do
         system "cmake", "..", *std_cmake_args,
