@@ -1,5 +1,5 @@
 class Toolchain < Formula
-  desc "C/C++ utilities for CPC development"
+  desc "Utilities for CPC development"
   homepage "https://github.com/CPCReady/toolchain"
   url "https://github.com/CPCReady/toolchain/releases/download/v0.0.7/cpcready-toolchain-v0.0.7.tar.gz"
   sha256 "58a9b32cda26383d2ecd95f695bee679a40d6f199a63df9fa7cdb4c61a3d55ce"
