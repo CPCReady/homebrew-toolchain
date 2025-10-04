@@ -13,6 +13,8 @@ class Toolchain < Formula
   depends_on "make" => :build
   depends_on "cmake" => :build
   depends_on "inih"
+  depends_on "shfmt" => :build
+  depends_on "direnv"
 
   def install
     # Limpiar directorios de build anteriores
