@@ -1,14 +1,14 @@
 class CpcKey < Formula
   desc "CPCReady Toolchain: Configuration tool treatment utility for key-value pairs"
   homepage "https://github.com/CPCReady/cpc-key"
-  url "https://github.com/CPCReady/cpc-key/archive/v5.0.0.tar.gz"
-  sha256 "d94b7aad0a91b62d48febd711cfc179389558381ef92ed70b0ae0b25dd13c56d"
+  url "https://github.com/CPCReady/cpc-key/archive/v6.0.0.tar.gz"
+  sha256 "868bc45185b7aa0bd7cb92f5ac856d6a1e85927822915aa676ee530ee186b47a"
   license "MIT"
-  version "5.0.0"
+  version "6.0.0"
 
   # Bottles para múltiples plataformas
   bottle do
-    root_url "https://github.com/CPCReady/cpc-key/releases/download/v5.0.0"
+    root_url "https://github.com/CPCReady/cpc-key/releases/download/v6.0.0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb5cac0f00f4b5525c24885127867b9993d54462dcf3ec2800855549b4ac6548"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb5cac0f00f4b5525c24885127867b9993d54462dcf3ec2800855549b4ac6548"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bb5cac0f00f4b5525c24885127867b9993d54462dcf3ec2800855549b4ac6548"
