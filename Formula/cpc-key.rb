@@ -9,13 +9,13 @@ class CpcKey < Formula
   # Bottles para múltiples plataformas
   bottle do
     root_url "https://github.com/CPCReady/cpc-key/releases/download/v5.0.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d38767aeca690077e2e37fec6845139eca8ae0c42f2232b1ac5c15b07d4e6bfc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d38767aeca690077e2e37fec6845139eca8ae0c42f2232b1ac5c15b07d4e6bfc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d38767aeca690077e2e37fec6845139eca8ae0c42f2232b1ac5c15b07d4e6bfc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d38767aeca690077e2e37fec6845139eca8ae0c42f2232b1ac5c15b07d4e6bfc"
-    sha256 cellar: :any_skip_relocation, ventura:       "d38767aeca690077e2e37fec6845139eca8ae0c42f2232b1ac5c15b07d4e6bfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b416ea04bb1f977527fdabceedd82af64d32891fb62b28b9783bf080b2e9d9d"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "8da30df747531239529aba0f7ae43d7b2db77307bb08d1e4ccc63d47be3b40d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb5cac0f00f4b5525c24885127867b9993d54462dcf3ec2800855549b4ac6548"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb5cac0f00f4b5525c24885127867b9993d54462dcf3ec2800855549b4ac6548"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb5cac0f00f4b5525c24885127867b9993d54462dcf3ec2800855549b4ac6548"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb5cac0f00f4b5525c24885127867b9993d54462dcf3ec2800855549b4ac6548"
+    sha256 cellar: :any_skip_relocation, ventura:       "bb5cac0f00f4b5525c24885127867b9993d54462dcf3ec2800855549b4ac6548"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b7418c4abda49508beb1a05e2069346e24f9ae7cfe560424f454ed2faa9521"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "822d1d4e60662208ed80d35d25e47c1677efff13549a8236bcf4bbcfd5f51614"
   end
 
   def install
