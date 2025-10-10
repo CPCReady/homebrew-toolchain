@@ -1,18 +1,21 @@
 class CpcKey < Formula
   desc "CPCReady Toolchain: Configuration tool treatment utility for key-value pairs"
-  homepage "https://github.com/CPCReady/cpc-key"
-  url "https://github.com/CPCReady/cpc-key/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "0bcf2b28d6644200d7b64d6b0204ef049460f8f47438cc877e75a6eda4d9e65c"
+  homepage "https://github.com/CPCReady/CPCReady"
+  url "https://github.com/CPCReady/CPCReady/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   license "MIT"
 
   # Bottles para múltiples plataformas
   bottle do
-    root_url "https://github.com/CPCReady/cpc-key/releases/download/v4.0.0"
+    root_url "https://github.com/CPCReady/CPCReady/releases/download/v4.0.0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, sequoia: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, sonoma: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
+    sha256 cellar: :any_skip_relocation, sequoia:        "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
+    sha256 cellar: :any_skip_relocation, ventura:       "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46657db3aec1abc72a5e2996076e735d3b13ce786ad9e5fe93a7965d14d98d74"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "d9bedd389462fdfa3811ae4efbaed174342306c4509d36a9a468b2a51398e366"
   end
 
   def install
