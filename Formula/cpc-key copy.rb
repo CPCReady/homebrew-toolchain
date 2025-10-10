@@ -40,7 +40,7 @@ class CpcKey < Formula
       server_name=localhost
       port=8080
       timeout=30
-      debug_mode="true"
+      debug_mode=\"true\"
     EOS
 
     # Probar lectura de valores
