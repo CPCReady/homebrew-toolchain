@@ -1,13 +1,13 @@
 class CpcKey < Formula
   desc "CPCReady Toolchain: Configuration tool treatment utility for key-value pairs"
-  homepage "https://github.com/CPCReady/CPCReady"
-  url "https://github.com/CPCReady/CPCReady/archive/refs/tags/v4.0.0.tar.gz"
+  homepage "https://github.com/CPCReady"
+  url "https://github.com/CPCReady/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   license "MIT"
 
   # Bottles para múltiples plataformas
   bottle do
-    root_url "https://github.com/CPCReady/CPCReady/releases/download/v4.0.0"
+    root_url "https://github.com/CPCReady/releases/download/v4.0.0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
@@ -44,7 +44,7 @@ class CpcKey < Formula
     EOS
 
     # Probar lectura de valores
-    assert_equaleeeee "localhost", shell_output("#{bin}/cpc-key get #{testpath}/test.conf server_name").strip
+    assert_equal "localhost", shell_output("#{bin}/cpc-key get #{testpath}/test.conf server_name").strip
     assert_equal "8080", shell_output("#{bin}/cpc-key get #{testpath}/test.conf port").strip
     assert_equal "30", shell_output("#{bin}/cpc-key get #{testpath}/test.conf timeout").strip
     assert_equal "true", shell_output("#{bin}/cpc-key get #{testpath}/test.conf debug_mode").strip
