@@ -2,7 +2,7 @@ class CpcKey < Formula
   desc "CPCReady Toolchain: Configuration tool treatment utility for key-value pairs"
   homepage "https://github.com/CPCReady/cpc-key"
   url "https://github.com/CPCReady/cpc-key/archive/refs/tags/v9.0.0.tar.gz"
-  sha256 "7ce20ae1684bb5d101ca023914117ad03fba9a774313c8a9c68da8fcaf3fe7ff"
+  sha256 "a0f605afa1d51d0abb7d72438ff267c7d7ef8a23d715f638bb562c51005ce5eb"
   license "MIT"
 
   # Bottles para múltiples plataformas
