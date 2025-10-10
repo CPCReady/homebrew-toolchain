@@ -1,20 +1,21 @@
 class CpcKey < Formula
   desc "CPCReady Toolchain: Configuration tool treatment utility for key-value pairs"
   homepage "https://github.com/CPCReady"
-  url "https://github.com/CPCReady/archive/refs/tags/v4.0.0.tar.gz"
+  url "https://github.com/CPCReady/archive/refs/tags/v9.0.0.tar.gz"
   sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   license "MIT"
 
   # Bottles para múltiples plataformas
   bottle do
-    root_url "https://github.com/CPCReady/releases/download/v4.0.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, sequoia:       "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, ventura:       "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46657db3aec1abc72a5e2996076e735d3b13ce786ad9e5fe93a7965d14d98d74"
+    root_url "https://github.com/CPCReady/releases/download/v9.0.0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "308c438566586fec3d1e86c9b7119e3bbb764e47ba85d1fd4b30e6c38d4fbd20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "308c438566586fec3d1e86c9b7119e3bbb764e47ba85d1fd4b30e6c38d4fbd20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "308c438566586fec3d1e86c9b7119e3bbb764e47ba85d1fd4b30e6c38d4fbd20"
+    sha256 cellar: :any_skip_relocation, sequoia:       "40e9da94ec8b725b1d60c31dbfbfb0c12a97c73e5d24406a58a86f6a072df8c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "40e9da94ec8b725b1d60c31dbfbfb0c12a97c73e5d24406a58a86f6a072df8c3"
+    sha256 cellar: :any_skip_relocation, ventura:       "40e9da94ec8b725b1d60c31dbfbfb0c12a97c73e5d24406a58a86f6a072df8c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20ee25af5199db565cfb736707875a010ed3c226ada4f8af6c3e471f04fb325b"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "28d3813c446ba953ca60a5b3ffc728aa8f9fdd2f3209b7aee739c63a6348f414"
   end
 
   def install
