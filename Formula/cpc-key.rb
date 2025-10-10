@@ -64,7 +64,7 @@ class CpcKey < Formula
 
     # Verificar versión
     output = shell_output("#{bin}/cpc-key --version")
-    assert_match "cpc-conf version", output
+    assert_match "cpc-key version", output
 
     # Verificar ayuda
     output = shell_output("#{bin}/cpc-key --help")
