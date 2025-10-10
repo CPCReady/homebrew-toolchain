@@ -9,10 +9,10 @@ class CpcKey < Formula
   bottle do
     root_url "https://github.com/CPCReady/cpc-key/releases/download/v4.0.0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, sequoia:        "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
+    sha256 cellar: :any_skip_relocation, sequoia: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
+    sha256 cellar: :any_skip_relocation, sonoma: "8c5f554e1e0d9d885f4457e20b72e6bd739b36ba5f96fe9f94cd4d6975220843"
   end
 
   def install
