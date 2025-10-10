@@ -1,21 +1,21 @@
 class CpcKey < Formula
   desc "CPCReady Toolchain: Configuration tool treatment utility for key-value pairs"
   homepage "https://github.com/CPCReady/cpc-key"
-  url "https://github.com/CPCReady/cpc-key/archive/refs/tags/v9.0.2.tar.gz"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  url "https://github.com/CPCReady/cpc-key/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   license "MIT"
 
   # Bottles para múltiples plataformas
   bottle do
-    root_url "https://github.com/CPCReady/cpc-key/releases/download/v9.0.2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c41295d668309e10062d710611a327b60a6a390b9d11ae0ced38d97312991f7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c41295d668309e10062d710611a327b60a6a390b9d11ae0ced38d97312991f7e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c41295d668309e10062d710611a327b60a6a390b9d11ae0ced38d97312991f7e"
-    sha256 cellar: :any_skip_relocation, sequoia:       "c41295d668309e10062d710611a327b60a6a390b9d11ae0ced38d97312991f7e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c41295d668309e10062d710611a327b60a6a390b9d11ae0ced38d97312991f7e"
-    sha256 cellar: :any_skip_relocation, ventura:       "c41295d668309e10062d710611a327b60a6a390b9d11ae0ced38d97312991f7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d624ff2a01483a60b1acc024485fc22b74544bbbfccea3fb5ccd03da6f6dcd72"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "7839a1891589c126a0591d782c76078d7169e9c8a203a7ef386665d0c0e8cd53"
+    root_url "https://github.com/CPCReady/cpc-key/releases/download/v1.0.0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec9af4c416b423c48979063eed56056833f25b62ce3d15b183ee2c9610e9cd2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec9af4c416b423c48979063eed56056833f25b62ce3d15b183ee2c9610e9cd2c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec9af4c416b423c48979063eed56056833f25b62ce3d15b183ee2c9610e9cd2c"
+    sha256 cellar: :any_skip_relocation, sequoia:       "ec9af4c416b423c48979063eed56056833f25b62ce3d15b183ee2c9610e9cd2c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec9af4c416b423c48979063eed56056833f25b62ce3d15b183ee2c9610e9cd2c"
+    sha256 cellar: :any_skip_relocation, ventura:       "ec9af4c416b423c48979063eed56056833f25b62ce3d15b183ee2c9610e9cd2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3522af731bc0da3ff5a595184e04b60ce21756f151764ddcec9b8a360dbfda3"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "67d7985a98c1d59bcb168bce903378fc71836c001efdaaafea9572c769391092"
   end
 
   def install
