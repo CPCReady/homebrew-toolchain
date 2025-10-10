@@ -8,14 +8,14 @@ class CpcKey < Formula
   # Bottles para múltiples plataformas
   bottle do
     root_url "https://github.com/CPCReady/cpc-key/releases/download/v9.0.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "308c438566586fec3d1e86c9b7119e3bbb764e47ba85d1fd4b30e6c38d4fbd20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "308c438566586fec3d1e86c9b7119e3bbb764e47ba85d1fd4b30e6c38d4fbd20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "308c438566586fec3d1e86c9b7119e3bbb764e47ba85d1fd4b30e6c38d4fbd20"
-    sha256 cellar: :any_skip_relocation, sequoia:       "40e9da94ec8b725b1d60c31dbfbfb0c12a97c73e5d24406a58a86f6a072df8c3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40e9da94ec8b725b1d60c31dbfbfb0c12a97c73e5d24406a58a86f6a072df8c3"
-    sha256 cellar: :any_skip_relocation, ventura:       "40e9da94ec8b725b1d60c31dbfbfb0c12a97c73e5d24406a58a86f6a072df8c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20ee25af5199db565cfb736707875a010ed3c226ada4f8af6c3e471f04fb325b"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "28d3813c446ba953ca60a5b3ffc728aa8f9fdd2f3209b7aee739c63a6348f414"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2968986a04e382ceceef754dcab4480fa7e7070686d640597cfb35239b806db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b8c9b0c4b2be26d8ad69f47889fc749d5ecc1012e7fc30e3f0a6381afdd267f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4a61731cdad94d5c72b9cd8937499a63e4860e7c28fc6f74bf0aa17d2c49189"
+    sha256 cellar: :any_skip_relocation, sequoia:       "8a6b127c341034209fb9d03a2ebd7cd27c40c417de424dc65cbf6b5dcce8011a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a8fabe3b28a540765ebebbc9085eb316fa733fcc50940673bd5b32c0c4ac743"
+    sha256 cellar: :any_skip_relocation, ventura:       "c8328239d01626c455652ecdc43c91fb4de69b603c2bdb0937d89a60026c557d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e193c350680c557044c375b6818e068b90ac8be608201aa9414520c32d5df20f"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "b35fff192d2dc4bb893002f058410e652ea673980c1d8229da3c6a04628d3839"
   end
 
   def install
