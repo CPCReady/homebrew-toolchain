@@ -8,14 +8,14 @@ class Idsk < Formula
   # Bottles para múltiples plataformas
   bottle do
     root_url "https://github.com/CPCReady/idsk/releases/download/v0.20.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53896ddb28ad6c6c2f9b9256172975333471f8dacfd18a2614e2485a840d4e99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53896ddb28ad6c6c2f9b9256172975333471f8dacfd18a2614e2485a840d4e99"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "53896ddb28ad6c6c2f9b9256172975333471f8dacfd18a2614e2485a840d4e99"
-    sha256 cellar: :any_skip_relocation, sequoia:       "bcc07b9987237705ce7d2385541328c248c329ac48dc464fea8491e260b9181d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bcc07b9987237705ce7d2385541328c248c329ac48dc464fea8491e260b9181d"
-    sha256 cellar: :any_skip_relocation, ventura:       "bcc07b9987237705ce7d2385541328c248c329ac48dc464fea8491e260b9181d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2a64ddeefdf0f3bc393e50f3458dae65931f5ea99bdd34af9c57e9380314f38"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "442bc7d0ad929c4552a4a6d6e36bc768c25afaae16867e70f7642fa8ea9b3ccd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9588f02c23ffa2232324d78ae656870b6cb0fc3fe316365f731b99a69a854116"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9588f02c23ffa2232324d78ae656870b6cb0fc3fe316365f731b99a69a854116"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9588f02c23ffa2232324d78ae656870b6cb0fc3fe316365f731b99a69a854116"
+    sha256 cellar: :any_skip_relocation, sequoia:       "f9c30f1c9698fecf1dce1c9a6d0a88520c452d2a934407fe4dcb491f5016e994"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9c30f1c9698fecf1dce1c9a6d0a88520c452d2a934407fe4dcb491f5016e994"
+    sha256 cellar: :any_skip_relocation, ventura:       "f9c30f1c9698fecf1dce1c9a6d0a88520c452d2a934407fe4dcb491f5016e994"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "910358ce10f4c7b848261c31dd161c0114b76074c55f60e2bbe0d68ba251188d"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "5f6853c6b7a569ddd032dccac8639f25cb8989916b0ba28182bf0d030f1f3544"
   end
 
   depends_on "cmake" => :build
@@ -25,12 +25,12 @@ class Idsk < Formula
     # Si estamos compilando desde fuente, necesitamos compilar
     if build.bottle?
       # Para bottles, simplemente copiar desde la estructura del bottle
-      bin.install "bin/idsk" => "idsk"
+      bin.install "bin/idsk" => "iDSK"
     else
       # Para compilación desde fuente
       system "cmake", "-S", ".", "-B", "build", "-DCMAKE_BUILD_TYPE=Release", *std_cmake_args
       system "cmake", "--build", "build", "--config", "Release"
-      bin.install "build/idsk"
+      bin.install "build/iDSK"
     end
 
     # Instalar documentación si está disponible
