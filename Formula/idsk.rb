@@ -25,12 +25,12 @@ class Idsk < Formula
     # Si estamos compilando desde fuente, necesitamos compilar
     if build.bottle?
       # Para bottles, simplemente copiar desde la estructura del bottle
-      bin.install "bin/idsk" => "iDSK"
+      bin.install "bin/idsk" => "idsk"
     else
       # Para compilación desde fuente
       system "cmake", "-S", ".", "-B", "build", "-DCMAKE_BUILD_TYPE=Release", *std_cmake_args
       system "cmake", "--build", "build", "--config", "Release"
-      bin.install "build/iDSK"
+      bin.install "build/idsk"
     end
 
     # Instalar documentación si está disponible
@@ -42,13 +42,13 @@ class Idsk < Formula
   test do
     # Crear un archivo DSK de prueba y verificar las funcionalidades básicas
     # Verificar que el comando existe y muestra ayuda
-    output = shell_output("#{bin}/iDSK 2>&1")
+    output = shell_output("#{bin}/idsk 2>&1")
     assert_match "Enhanced version", output
     assert_match "Usage", output
     assert_match "OPTIONS", output
 
     # Verificar que podemos crear un nuevo DSK
-    system bin/"iDSK", "test.dsk", "-n"
+    system bin/"idsk", "test.dsk", "-n"
     assert_path_exists testpath/"test.dsk"
   end
 end
