@@ -49,7 +49,7 @@ class Idsk < Formula
 
     # Verificar que podemos crear un nuevo DSK
     system bin/"iDSK", "test.dsk", "-n"
-    assert_predicate testpath/"test.dsk", :exist?
+    assert_path_exists testpath/"test.dsk"
 
     # Verificar que podemos listar el contenido del DSK vacío
     output = shell_output("#{bin}/iDSK test.dsk -l")
@@ -67,7 +67,7 @@ class Idsk < Formula
 
     # Exportar el archivo del DSK
     system bin/"iDSK", "test.dsk", "-g", "test.txt"
-    assert_predicate testpath/"test.txt", :exist?
+    assert_path_exists testpath/"test.txt"
 
     # Verificar el contenido del archivo exportado
     assert_equal "Hello CPC World!", File.read(testpath/"test.txt").strip
