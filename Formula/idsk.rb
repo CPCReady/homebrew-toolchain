@@ -25,7 +25,7 @@ class Idsk < Formula
     # Si estamos compilando desde fuente, necesitamos compilar
     if build.bottle?
       # Para bottles, simplemente copiar desde la estructura del bottle
-      bin.install "bin/iDSK"
+      bin.install "bin/idsk" => "iDSK"
     else
       # Para compilación desde fuente
       system "cmake", "-S", ".", "-B", "build", "-DCMAKE_BUILD_TYPE=Release", *std_cmake_args
