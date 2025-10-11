@@ -43,7 +43,7 @@ class Idsk < Formula
     # Crear un archivo DSK de prueba y verificar las funcionalidades básicas
     # Verificar que el comando existe y muestra ayuda
     output = shell_output("#{bin}/iDSK 2>&1")
-    assert_match "iDSK version", output
+    assert_match "Enhanced version", output
     assert_match "Usage", output
     assert_match "OPTIONS", output
 
