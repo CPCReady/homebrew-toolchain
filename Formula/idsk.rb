@@ -8,14 +8,14 @@ class Idsk < Formula
   # Bottles para múltiples plataformas
   bottle do
     root_url "https://github.com/CPCReady/idsk/releases/download/v0.20.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5330469d67bd8f3386025a553390aec58d6db0c8ebced097bc4f160c255d5519"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5330469d67bd8f3386025a553390aec58d6db0c8ebced097bc4f160c255d5519"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5330469d67bd8f3386025a553390aec58d6db0c8ebced097bc4f160c255d5519"
-    sha256 cellar: :any_skip_relocation, sequoia:       "f8bc6abafadb30e6dcd606dcbf892eb6a59e1a07cae84776dc18f47983fd4515"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8bc6abafadb30e6dcd606dcbf892eb6a59e1a07cae84776dc18f47983fd4515"
-    sha256 cellar: :any_skip_relocation, ventura:       "f8bc6abafadb30e6dcd606dcbf892eb6a59e1a07cae84776dc18f47983fd4515"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e01dec61299b0df0167fd2dbbf1c0b8edffdc2122a4aa378f6bf298214b251e"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "a6795df5c6397a5869c8a2dbc9724ac14ad91b97f3b353a61082b567313e0fca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "958ac3dfc37e61b556f13e8b3f742cd57dfe248ac37ca68c2818dc41b48ebb01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "958ac3dfc37e61b556f13e8b3f742cd57dfe248ac37ca68c2818dc41b48ebb01"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "958ac3dfc37e61b556f13e8b3f742cd57dfe248ac37ca68c2818dc41b48ebb01"
+    sha256 cellar: :any_skip_relocation, sequoia:       "f3ea2399b97a92ea8e97b3914607fd04169ed8aadfbffd17c7d12295b35469f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f3ea2399b97a92ea8e97b3914607fd04169ed8aadfbffd17c7d12295b35469f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "f3ea2399b97a92ea8e97b3914607fd04169ed8aadfbffd17c7d12295b35469f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7abbb043fc079b2606848ab088f1c4a78bf6036c04e3250b14ee268fe1cfe448"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "d4a06c755e0c1e1312f9c69a04a194b21018133cbb1f4b35fc81dfadf5d7d479"
   end
 
   depends_on "cmake" => :build
