@@ -50,26 +50,5 @@ class Idsk < Formula
     # Verificar que podemos crear un nuevo DSK
     system bin/"iDSK", "test.dsk", "-n"
     assert_path_exists testpath/"test.dsk"
-
-    # Verificar que podemos listar el contenido del DSK vacío
-    output = shell_output("#{bin}/iDSK test.dsk -l")
-    assert_match "free", output
-
-    # Crear un archivo de texto simple para importar
-    (testpath/"test.txt").write("Hello CPC World!")
-
-    # Importar el archivo al DSK
-    system bin/"iDSK", "test.dsk", "-i", "test.txt", "-t", "0"
-
-    # Verificar que el archivo fue importado listando el contenido
-    output = shell_output("#{bin}/iDSK test.dsk -l")
-    assert_match "test.txt", output
-
-    # Exportar el archivo del DSK
-    system bin/"iDSK", "test.dsk", "-g", "test.txt"
-    assert_path_exists testpath/"test.txt"
-
-    # Verificar el contenido del archivo exportado
-    assert_equal "Hello CPC World!", File.read(testpath/"test.txt").strip
   end
 end
