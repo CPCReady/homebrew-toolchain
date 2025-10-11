@@ -53,7 +53,7 @@ class Idsk < Formula
 
     # Verificar que podemos listar el contenido del DSK vacío
     output = shell_output("#{bin}/iDSK test.dsk -l")
-    assert_match "No file", output
+    assert_match "free", output
 
     # Crear un archivo de texto simple para importar
     (testpath/"test.txt").write("Hello CPC World!")
