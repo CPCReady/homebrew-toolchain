@@ -1,21 +1,19 @@
 class Idsk < Formula
   desc "Amstrad CPC Disk Image Management Tool - Professional CLI utility for DSK files"
   homepage "https://github.com/CPCReady/idsk"
-  url "https://github.com/CPCReady/idsk/archive/refs/tags/v0.20.1.tar.gz"
-  sha256 "248efd69740c9e311e460c0b19294b739dc35d088032cb4351b646797464c908"
+  url "https://github.com/CPCReady/idsk/archive/refs/tags/v0.22.tar.gz"
+  sha256 "d3672ee33351e62a9b60d9e5e883c76a83ef646227f4958cb9ca8a3479e2e674"
   license "MIT"
 
   # Bottles para múltiples plataformas
   bottle do
-    root_url "https://github.com/CPCReady/idsk/releases/download/v0.20.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b326413af0b44f1d611fb1ddefc189259d2540547a24b429e18e80220c244411"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b326413af0b44f1d611fb1ddefc189259d2540547a24b429e18e80220c244411"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b326413af0b44f1d611fb1ddefc189259d2540547a24b429e18e80220c244411"
-    sha256 cellar: :any_skip_relocation, sequoia:       "8c3ccb08ce6cb4a69993ec4f654074d435db6a41105a1043f064986f644cd6f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c3ccb08ce6cb4a69993ec4f654074d435db6a41105a1043f064986f644cd6f9"
-    sha256 cellar: :any_skip_relocation, ventura:       "8c3ccb08ce6cb4a69993ec4f654074d435db6a41105a1043f064986f644cd6f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ee594ba0805ffba14d13d24ad2be885b6d7e9d4f15cf3963fbcdee93d26523e"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "cc6060f117f36d6a371724c607270217078aca3e9751e4711ea13757fc4f4c8d"
+    root_url "https://github.com/CPCReady/idsk/releases/download/v0.22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2f3fd65a224b60537a7a1868e0c998fde01be95419b8e7e408e15c94708fd19"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2f3fd65a224b60537a7a1868e0c998fde01be95419b8e7e408e15c94708fd19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2f3fd65a224b60537a7a1868e0c998fde01be95419b8e7e408e15c94708fd19"
+    sha256 cellar: :any_skip_relocation, sequoia:       "0869b0b2ac7aa7df27fd640fcafd013fad6aa1285c1853a9db95aaacefc00a13"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0869b0b2ac7aa7df27fd640fcafd013fad6aa1285c1853a9db95aaacefc00a13"
+    sha256 cellar: :any_skip_relocation, ventura:       "0869b0b2ac7aa7df27fd640fcafd013fad6aa1285c1853a9db95aaacefc00a13"
   end
 
   depends_on "cmake" => :build
